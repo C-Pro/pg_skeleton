@@ -12,4 +12,5 @@ install:
   - echo 'test' | bash ./install.sh
   - cat install.log
 script:
-  - cd test && pg_prove -h localhost -p 55436 -d skel_test -U postgres tests/run_*.sql
+  - export PERL5LIB=~/perl5/lib/perl5
+  - cd test && ~/perl5/bin/pg_prove -h localhost -p 55436 -d skel_test -U postgres tests/run_*.sql
