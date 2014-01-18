@@ -4,6 +4,7 @@ before_install:
   - wget https://gist.github.com/C-Pro/8491912/raw/pg-pgtap-install.sh
   - sudo sh ./apt.postgresql.org.sh
   - cp install.cfg.example install.cfg
+  - cpanm TAP::Parser::SourceHandler::pgTAP
 env:
   - PGVERSION=9.3
 install:
