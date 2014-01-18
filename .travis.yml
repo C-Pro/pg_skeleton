@@ -1,7 +1,7 @@
 language: perl
 services: postgresql
 addons:
-  postgresql: 9.3
+  postgresql: 9.2
 before_install:
   - sudo apt-get update
   - sudo apt-get install pgtap libtap-parser-sourcehandler-pgtap-perl
