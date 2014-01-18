@@ -1,0 +1,1 @@
+select * from test.test_user_0010(); --4 tests

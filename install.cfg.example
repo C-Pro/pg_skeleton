@@ -1,0 +1,5 @@
+#Example settings file for installation script
+db_host=localhost
+db_port=5432
+db_user=skel_test
+db_name=skel_test
