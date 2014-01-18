@@ -1,0 +1,5 @@
+*.orig
+*.log
+*.*~
+*.swp
+install.cfg
