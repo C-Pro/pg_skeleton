@@ -22,7 +22,3 @@ psql -h $db_host -p $db_port -d $db_name -U postgres -f extensions.sql &>>instal
 echo "Creating schema. Enter your schema user password."
 psql -h $db_host -p $db_port -d $db_name -U $db_user -f install.sql &>> install.log
 
-cd 'test'
-./run_tests.sh
-
-echo "Done!"

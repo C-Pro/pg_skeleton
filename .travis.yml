@@ -6,6 +6,7 @@ before_install:
   - cp install.cfg.example install.cfg
 install:
   - echo 'test' | bash ./install.sh
+  - cat install.log
 script:
   - cd test
-  - bash ./run_tests.sh
+  - pg_prove -h localhost -d skel_test -U postgres tests/run_*.sql
