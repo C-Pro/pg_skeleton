@@ -4,9 +4,7 @@ before_install:
   - cpanm TAP::Parser::SourceHandler::pgTAP
   - cp install.cfg.example install.cfg
 install:
-  - bash echo 'test' | ./install.sh
-env:
-  - PGVERSION=9.3
+  - echo 'test' | bash ./install.sh
 script:
   - cd test
   - bash ./run_tests.sh
