@@ -1,16 +1,15 @@
 language: c
+env:
+  - PGVERSION=9.3
 before_install:
   - wget https://gist.github.com/petere/5893799/raw/apt.postgresql.org.sh
   - wget https://gist.github.com/C-Pro/8491912/raw/pg-pgtap-install.sh
+  - wget https://gist.github.com/C-Pro/8492131/raw/install.cfg
   - sudo sh ./apt.postgresql.org.sh
-  - cp install.cfg.example install.cfg
   - cpanm TAP::Parser::SourceHandler::pgTAP
-env:
-  - PGVERSION=9.3
-install:
   - bash pg-pgtap-install.sh
+install:
   - echo 'test' | bash ./install.sh
   - cat install.log
 script:
-  - cd test
-  - pg_prove -h localhost -d skel_test -U postgres tests/run_*.sql
+  - cd test && pg_prove -h localhost -p 55436 -d skel_test -U postgres tests/run_*.sql
