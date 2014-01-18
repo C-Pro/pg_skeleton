@@ -1,4 +1,4 @@
-language: c
+language: perl
 env:
   - PGVERSION=9.3
 before_install:
@@ -6,7 +6,8 @@ before_install:
   - wget https://gist.github.com/C-Pro/8491912/raw/pg-pgtap-install.sh
   - wget https://gist.github.com/C-Pro/8492131/raw/install.cfg
   - sudo sh ./apt.postgresql.org.sh
-  - sudo apt-get install libtap-parser-sourcehandler-pgtap-perl
+#  - sudo apt-get install libtap-parser-sourcehandler-pgtap-perl
+  - cpanm TAP::Parser::SourceHandler::pgTAP
   - bash pg-pgtap-install.sh
 install:
   - echo 'test' | bash ./install.sh
