@@ -6,10 +6,10 @@ before_install:
   - wget https://gist.github.com/C-Pro/8491912/raw/pg-pgtap-install.sh
   - wget https://gist.github.com/C-Pro/8492131/raw/install.cfg
   - sudo sh ./apt.postgresql.org.sh
-  - echo 'yes' | cpan TAP::Parser::SourceHandler::pgTAP
+  - sudo bash -c 'echo yes | cpan TAP::Parser::SourceHandler::pgTAP'
   - bash pg-pgtap-install.sh
 install:
   - echo 'test' | bash ./install.sh
   - cat install.log
 script:
-  - cd test && ~/perl5/bin/pg_prove -h localhost -p 55436 -d skel_test -U postgres tests/run_*.sql
+  - cd test && pg_prove -h localhost -p 55436 -d skel_test -U postgres tests/run_*.sql
