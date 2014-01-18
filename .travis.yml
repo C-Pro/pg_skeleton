@@ -6,7 +6,7 @@ before_install:
   - wget https://gist.github.com/C-Pro/8491912/raw/pg-pgtap-install.sh
   - wget https://gist.github.com/C-Pro/8492131/raw/install.cfg
   - sudo sh ./apt.postgresql.org.sh
-  - cpanm TAP::Parser::SourceHandler::pgTAP
+  - sudo apt-get install libtap-parser-sourcehandler-pgtap-perl
   - bash pg-pgtap-install.sh
 install:
   - echo 'test' | bash ./install.sh
