@@ -1,7 +1,7 @@
 language: perl
 services: postgresql
 before_install:
-  - sudo cpan TAP::Parser::SourceHandler::pgTAP
+  - cpanm TAP::Parser::SourceHandler::pgTAP
   - cp install.cfg.example install.cfg
 install:
   - bash echo 'test' | ./install.sh
