@@ -1,0 +1,10 @@
+services: postgresql
+before_install:
+  - cp install.cfg.example install.cfg
+install:
+  - bash echo 'test' | ./install.sh
+env:
+  - PGVERSION=9.3
+script:
+  - cd test
+  - bash ./run_tests.sh
