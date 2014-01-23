@@ -17,7 +17,7 @@ begin
                 select distinct(array_to_string(regexp_matches (descr,'\w+.\w+'),',','*')) as f_name
         from __tresults__
         ) as r;
-        return next is(v_array,null,'Проверка наличия тестов для функций cхемы '||p_scheme||'.');
+        return next is(v_array,null,'All functions in schema '||p_scheme||' are covered with tests.');
 end;
 $$ language plpgsql;
 

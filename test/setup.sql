@@ -9,10 +9,8 @@
 \set ON_ERROR_ROLLBACK 1
 \set ON_ERROR_STOP true
 
--- Load the TAP functions.
 BEGIN;
 
 \i create_tables.sql
 \i test_data.sql
---\i ../test/pgtap.sql
 \i functions.sql

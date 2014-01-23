@@ -1,7 +1,7 @@
 \i setup.sql
-select plan(4+2+1);
+select plan(7+2+1);
 
---4 tests
+--7 tests
 \i tests/user_crud.sql
 --2 tests
 \i tests/user_schema.sql
